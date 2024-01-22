@@ -1,0 +1,355 @@
+@import 'styles/colors';
+@import 'styles/dark-theme';
+@import 'donut-shop/category-sort';
+@import 'donut-shop/donut-shop';
+@import 'check-out-cart/form';
+@import 'check-out-cart/cart';
+
+@include dark-theme;
+
+body.confirmation-window-open {
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: $background;
+
+    /*===================================================================
+    -------------------------------HEADER--------------------------------
+    ====================================================================*/
+    header {
+
+        nav {
+            background-color: $pink;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 200;
+            width: 100%;
+            height: 3.5rem;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            gap: 1rem;
+
+            &>a {
+                text-decoration: none;
+            }
+
+            h1 {
+                display: flex;
+                font-family: 'Raleway', sans-serif;
+                font-size: 1.2rem;
+                padding-left: 0.5rem;
+                margin: 0;
+                color: #fff;
+            }
+
+            /*=======================================
+            -------------LIGHT/DARK THEME------------
+            =======================================*/
+            .theme-button-container {
+                display: flex;
+                justify-content: flex-end;
+                width: 20%;
+
+                .theme-button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 8px;
+                    width: 40px;
+                    height: 40px;
+                    border: 1px #fff solid;
+                    background-color: transparent;
+                    color: $button-pink-text;
+                }
+            }
+
+            /*=======================================
+            -----------------CART ICON---------------
+            =======================================*/
+            .cart-container {
+                width: 10%;
+                display: flex;
+                justify-content: flex-end;
+                position: relative;
+                gap: 1rem;
+
+                .shopping-cart {
+                    background-color: $pink;
+                    color: #fff;
+                    border-radius: 8px;
+                    border: 1px solid #fff;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 100;
+
+                    &>i {
+                        text-decoration: none;
+                        color: #fff;
+                    }
+
+                }
+
+                .cart-items-number {
+                    z-index: 101;
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    top: -0.1rem;
+                    right: -0.8rem;
+                    border: 1px solid white;
+                    border-radius: 20px;
+                    padding: 5px;
+                    background-color: #fff;
+                    color: $pink;
+                    width: 25px;
+                    height: 25px;
+                    transition: all 0.3s ease;
+
+                    &.enlarge {
+                        transform: scale(1.25);
+                    }
+                }
+
+                .cart-page {
+                    background-color: #858484;
+                    position: fixed;
+                    transform: translateY(-100%);
+                    transition: transform 0.5s;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    color: white;
+                    list-style: none;
+                    padding-top: 4rem;
+                    height: 50vh;
+                    margin-top: 0;
+                }
+            }
+
+            /*=======================================
+            --------------HAMBURGER MENU-------------
+            =======================================*/
+            .menu {
+                position: fixed;
+                transform: translateY(-100%);
+                transition: transform 0.5s;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 101;
+                background-color: $light-pink;
+                color: white;
+                list-style: none;
+                padding-top: 4rem;
+                height: 100vh;
+                margin-top: 0;
+                display: none;
+
+                .menu-list {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    gap: 3rem;
+
+                    .menu-item {
+                        text-decoration: none;
+                        font-size: 3rem;
+                        color: $pink;
+                        transform: translate(-50%, 50%);
+                    }
+
+                    li {
+                        list-style-type: none;
+                    }
+                }
+            }
+
+            .show-menu {
+                transform: translateY(0);
+                display: block;
+            }
+
+            .hamburger {
+                min-width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 0.5rem;
+                z-index: 101;
+                padding: 4px;
+                border: #fff solid 1px;
+                border-radius: 8px;
+                background: $pink;
+                color: #fff;
+
+                .close-icon {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    /*===================================================================
+    ---------------------------------MAIN--------------------------------
+    ===================================================================*/
+    main {
+        margin-top: 2.8rem;
+
+        /*===================================================================
+        -------------------------------HOME----------------------------------
+        ===================================================================*/
+        .page-top {
+            height: 100vh;
+
+            .image-container {
+                position: relative;
+                width: 100%;
+                height: 50%;
+
+                .gottfrid-img {
+                    background-image: url('img/gottfrid.jpg');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center center;
+                    min-height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    border-radius: 8px;
+                }
+
+                .heading-welcome {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 3rem;
+                    backdrop-filter: blur(2px);
+                    color: $pink;
+                    text-shadow: -2px -1px #fff;
+                    font-family: 'Raleway', sans-serif;
+                }
+            }
+
+            .text-page-top {
+                display: flex;
+                align-items: center;
+                padding-left: 2rem;
+                padding-right: 2rem;
+                background-color: $light-pink;
+                min-height: 20vh;
+                border-radius: 8px;
+                margin-top: 3px;
+                margin-bottom: 3px;
+
+            }
+
+            .donut-box-img {
+                background-image: url('img/donut-box-640x420.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                min-height: 29vh;
+                width: 100%;
+                border-radius: 8px;
+            }
+        }
+
+        /*===================================================================
+        -------------------------------DONUT SHOP-----------------------------
+        ===================================================================*/
+        @include category-sort;
+        @include donut-shop;
+
+        /*===================================================================
+        -----------------------------SHOPPING CART---------------------------
+        ===================================================================*/
+        @include shopping-cart;
+
+        /*===================================================================
+        ---------------------------------FORM--------------------------------
+        ===================================================================*/
+        @include customer-form;
+
+        /*===================================================================
+        -------------------------CONFIRMATION WINDOW-------------------------
+        ===================================================================*/
+        .confirmation-window {
+            display: none;
+            align-items: center;
+            flex-direction: column;
+            width: 90%;
+            height: 70vh;
+            border-radius: 8px;
+            border: 1px $pink solid;
+            position: fixed;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #dbdbdb;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+
+            .confirmation-heading {
+                color: $pink;
+                font-size: 1.5rem;
+            }
+
+            .confirmation-information {
+                font-size: 1.2rem;
+                background-color: $white;
+                padding: 1rem;
+                border: 2px $pink dashed;
+                border-radius: 8px;
+            }
+
+            .confirmation-button {
+                font-size: 1.2rem;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 150px;
+                height: 40px;
+                border-radius: 8px;
+                border: none;
+                background-color: $pink;
+                color: $button-pink-text;
+                box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+
+    /*===================================================================
+    -------------------------------FOOTER--------------------------------
+    ===================================================================*/
+    footer {
+        font-size: small;
+        background-color: rgb(83, 60, 83);
+        height: 15vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: #ffffff;
+
+        &>p {
+            margin: 0;
+        }
+    }
+}

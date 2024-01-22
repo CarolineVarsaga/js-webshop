@@ -1,0 +1,128 @@
+@mixin shopping-cart {
+    .cart-section {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        padding-top: 0.5rem;
+        background-color: #996a8b;
+
+        &>h2 {
+            color: #fff;
+        }
+
+        .cart-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            height: 3rem;
+            border-radius: 8px;
+            background-color: #fff;
+            color: $pink;
+        }
+
+        .check-out-container {
+            width: 100%;
+            min-height: 300px;
+            position: relative;
+            display: grid;
+
+            /*----------------ADDED PRODUCT IN CART---------------------*/
+            .donut-in-cart {
+                border-bottom: 1px #fff solid;
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+                padding-bottom: 1rem;
+                margin-top: 0.5rem;
+                margin-bottom: 0;
+
+                .donut-in-cart-img-name {
+                    grid-column: 1 / span 6;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+
+                    .donut-in-cart-img {
+                        height: 100px;
+                        width: 100px;
+                        border-radius: 8px;
+                        border: 1px $pink solid;
+                        margin-top: 0.5rem;
+                        object-fit: cover;
+                    }
+
+                    .donut-in-cart-name {
+                        margin: 0;
+                    }
+                }
+
+                .donut-in-cart-amount {
+                    grid-column: 7 / span 4;
+                }
+
+                .donut-price-and-discount {
+                    grid-column: 12 / span 1;
+                    display: flex;
+                    flex-direction: column;
+
+                    .discount-message {
+                        font-style: italic;
+                    }
+                }
+
+                .remove-donut-button {
+                    height: 40px;
+                    width: 100px;
+                    border-radius: 8px;
+                    border: none;
+                    background-color: maroon;
+                    color: #fff;
+                    grid-column: -3 / span 2;
+                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+                }
+            }
+
+            .check-out-container:last-child {
+                padding-bottom: 2rem;
+            }
+
+            /*---------------------SUMMARY---------------------*/
+            .summary-container {
+                color: #fff;
+                min-height: 100px;
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+
+                .summary {
+                    grid-column: 11 / span 2;
+
+                    .total-sum-and-shipping {
+                        margin-top: 3rem;
+                    }
+                }
+            }
+        }
+
+        /*---------------------DISCOUNT---------------------*/
+        .discount-container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+
+            .print-monday {
+                background-color: #fff;
+                grid-column: 7 / 13;
+                margin-bottom: 0.5rem;
+                padding-bottom: 0.5rem;
+                padding-top: 0.5rem;
+                border-radius: 8px;
+                text-align: center;
+
+                &>span {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

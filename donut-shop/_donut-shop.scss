@@ -1,0 +1,63 @@
+@mixin donut-shop {
+    .donut-shop {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+
+        h2 {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .donut-container {
+            .donut-article {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                border-bottom: 1px solid $light-pink;
+                padding-top: 5px;
+                padding-bottom: 5px;
+
+                .donut-img {
+                    height: 150px;
+                    width: 150px;
+                    object-fit: cover;
+                    border-radius: 12px;
+                    border: 2px solid $pink;
+                }
+
+                /*---------------------DONUT INFO AND BUTTONS---------------------*/
+                .donut-area {
+                    display: flex;
+                    flex-direction: column;
+                    width: 50%;
+                    gap: 0.5rem;
+
+                    &>p {
+                        margin: 0;
+                    }
+
+                    .donut-heading {
+                        margin: 0;
+                        font-family: 'Raleway', sans-serif;
+                        font-weight: bold;
+                    }
+
+                    .buttons-box {
+                        //container
+                        display: flex;
+                        flex-direction: row;
+                        gap: 1rem;
+
+                        .donut-button {
+                            height: 38px;
+                            width: 38px;
+                            background-color: $pink;
+                            color: $button-pink-text;
+                            border: none;
+                            border-radius: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

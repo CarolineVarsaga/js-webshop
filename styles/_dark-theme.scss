@@ -1,0 +1,276 @@
+@import 'colors';
+
+@mixin dark-theme {
+    body.dark-theme {
+        background-color: $background-dark;
+        color: $white-dark;
+
+        /*===================================================================
+        -------------------------------HEADER--------------------------------
+        ===================================================================*/
+        header {
+            nav {
+                background-color: $pink-dark;
+
+                .cart-container {
+                    .shopping-cart {
+                        background-color: $pink-dark;
+                        color: $white-dark;
+                        border: 1px solid $white-dark;
+                    }
+
+                    .cart-items-number {
+                        border: 1px solid $white-dark;
+                        background-color: $white-dark;
+                        color: $pink-dark;
+                    }
+
+                    .cart-page {
+                        background-color: #858484;
+                        color: $white-dark;
+                    }
+                }
+
+                .menu {
+                    background-color: $light-pink-dark;
+                    color: $white-dark;
+
+                    .menu-item {
+                        color: $pink-dark;
+                    }
+                }
+
+                .hamburger {
+                    border: $white-dark solid 1px;
+                    background: $pink-dark;
+                    color: $white-dark;
+                }
+
+                h1 {
+                    color: $white-dark;
+                }
+            }
+        }
+
+        /*===================================================================
+        ---------------------------------MAIN--------------------------------
+        ===================================================================*/
+        main {
+
+            /*===================================================================
+            -------------------------------HOME----------------------------------
+            ===================================================================*/
+            .page-top {
+
+                .image-container {
+
+                    .gottfrid-img {
+                        filter: brightness(90%);
+                        -webkit-filter: brightness(90%);
+                    }
+
+                    .heading-welcome {
+                        color: $pink-dark;
+                        text-shadow: -2px -1px $white-dark;
+                    }
+                }
+
+                .text-page-top {
+                    background-color: $darker-pink;
+
+                }
+
+                .donut-box-img {
+                    filter: brightness(90%);
+                    -webkit-filter: brightness(90%);
+                }
+            }
+
+            /*===================================================================
+            -------------------------------DONUT SHOP-----------------------------
+            ===================================================================*/
+            .category-section {
+                background-color: $light-pink-dark;
+
+                button {
+                    background-color: $pink-dark;
+                    color: $button-pink-text;
+                }
+            }
+
+            .sort-section {
+                background-color: $darker-pink;
+
+                &>h3 {
+                    color: $white-dark;
+                }
+
+                .sort-buttons {
+                    button {
+                        background-color: $white-dark;
+                        color: $pink-dark;
+                    }
+                }
+            }
+
+            .donut-shop {
+                .donut-container {
+                    .donut-article {
+                        border-bottom: 1px solid $light-pink-dark;
+
+                        .donut-img {
+                            border: 2px solid $light-pink-dark;
+                            filter: brightness(90%);
+                            -webkit-filter: brightness(90%);
+                        }
+
+                        .donut-area {
+                            .buttons-box {
+                                .donut-button {
+                                    background-color: $pink-dark;
+                                    color: $button-pink-text;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /*===================================================================
+        -----------------------------SHOPPING CART---------------------------
+        ===================================================================*/
+        .cart-section {
+            background-color: $light-pink-dark;
+
+            &>h2 {
+                color: $pink-dark;
+            }
+
+            .cart-header {
+                background-color: $white-dark;
+                color: $pink-dark;
+            }
+
+            .check-out-container {
+                .donut-in-cart {
+                    border-bottom: 1px $white-dark solid;
+                    color: $pink-dark;
+                    font-weight: bold;
+
+                    .donut-in-cart-img-name {
+                        .donut-in-cart-img {
+                            border: 1px $pink-dark solid;
+                            filter: brightness(90%);
+                            -webkit-filter: brightness(90%);
+                        }
+                    }
+
+                    .remove-donut-button {
+                        color: $white-dark;
+                    }
+                }
+
+                .summary-container {
+                    color: $pink-dark;
+
+                    .summary {
+
+                        .shipping-cost,
+                        .total-sum {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+
+        /*===================================================================
+        ---------------------------------FORM--------------------------------
+        ===================================================================*/
+        form {
+            border: 2px dashed $light-pink-dark;
+            color: $white-dark;
+
+            input {
+                background-color: $white-dark;
+            }
+
+            .required:after {
+                color: $white-dark;
+            }
+
+            .payment-type {
+                .card-invoice {
+                    .payment-input {
+                        accent-color: $pink-dark;
+                    }
+                }
+            }
+
+            .discount-input-container {
+                border-top: 1px dashed $light-pink-dark;
+                border-bottom: 1px dashed $light-pink-dark;
+
+                .discount-add-button {
+                    background-color: $pink-dark;
+                    color: $button-pink-text-dark;
+                }
+            }
+
+            .checkboxes {
+                .checkbox-row {
+                    &>span {
+                        .asterisk {
+                            color: $white-dark;
+                        }
+                    }
+
+                    .checkbox {
+                        accent-color: $pink-dark;
+                    }
+                }
+            }
+
+            .submit-button {
+                background-color: $pink-dark;
+                color: $button-pink-text;
+            }
+        }
+
+        .reset-button {
+            background-color: maroon;
+            color: $white-dark;
+        }
+
+        /*===================================================================
+        -------------------------CONFIRMATION WINDOW-------------------------
+        ===================================================================*/
+        .confirmation-window {
+            border: 1px $pink-dark solid;
+            background-color: #dbdbdb;
+
+            .confirmation-heading {
+                color: $pink-dark;
+            }
+
+            .confirmation-information {
+                background-color: $white-dark;
+                color: black;
+            }
+
+            .confirmation-button {
+                background-color: $pink-dark;
+                color: $button-pink-text;
+            }
+        }
+
+        /*===================================================================
+        -------------------------------FOOTER--------------------------------
+        ===================================================================*/
+        footer {
+            background-color: rgb(83, 60, 83);
+            color: $white-dark;
+        }
+    }
+}

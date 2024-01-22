@@ -1,0 +1,135 @@
+@import 'styles/dark-theme';
+
+@include dark-theme;
+
+body {
+
+    /*===================================================================
+    ---------------------------------MAIN--------------------------------
+    ===================================================================*/
+    main {
+
+        /*===================================================================
+        -------------------------------PAGE 1--------------------------------
+        ===================================================================*/
+        .page-top {
+            .image-container {
+
+                .gottfrid-img {
+                    background-image: url('img/gottfrid-larger.jpg');
+                    background-position: center top;
+                }
+            }
+
+            .donut-box-img {
+                background-image: url('img/donut-box-1280.jpg');
+            }
+        }
+
+        /*===================================================================
+        -------------------------------DONUT SHOP-----------------------------
+        ===================================================================*/
+
+        .donut-shop {
+            padding-left: 1rem;
+            padding-right: 1rem;
+
+            .heading-container {
+                display: grid;
+                grid-template-columns: repeat(8, 1fr);
+
+                h2 {
+                    grid-column: 2 / 3;
+                    font-size: 1.6rem;
+                }
+            }
+
+            .donut-container {
+
+                .donut-article {
+                    display: grid;
+                    grid-template-columns: repeat(8, 1fr);
+
+                    .donut-img {
+                        grid-column: 2 / 3;
+                        height: 180px;
+                        width: 180px;
+                    }
+
+                    .donut-area {
+                        grid-column: 5 / 9;
+
+                        .donut-heading {
+                            font-size: 1.1rem;
+                        }
+
+                        .buttons-box {
+
+                            .donut-button {
+                                height: 38px;
+                                width: 38px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /*===================================================================
+        -----------------------------SHOPPING CART---------------------------
+        ===================================================================*/
+        .cart-section {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+
+            .cart-header {
+                display: grid;
+                grid-template-columns: repeat(13, 1fr);
+                text-align: center;
+                min-height: 3.3rem;
+
+                .product-heading,
+                .amount-heading,
+                .price-heading {
+                    margin: 0;
+                }
+
+                .amount-heading {
+                    grid-column: 7 / 8;
+                }
+
+                .price-heading {
+                    grid-column: 13 / 14;
+                    text-align: start;
+                }
+            }
+
+            .check-out-container {
+
+                .donut-in-cart {
+                    .remove-donut-button {
+                        grid-column: -2 / -1;
+                    }
+                }
+            }
+        }
+
+        /*===================================================================
+        ---------------------------------FORM--------------------------------
+        ===================================================================*/
+        .form-section {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+
+            form {
+                display: grid;
+                grid-column: 2 / span 6;
+            }
+
+            .reset-button {
+                grid-column: -8 / -7;
+            }
+        }
+    }
+}

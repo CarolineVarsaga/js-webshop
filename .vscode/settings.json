@@ -1,0 +1,13 @@
+{
+    "liveSassCompile.settings.autoprefix": [],
+    "liveSassCompile.settings.showOutputWindowOn": "Warning",
+    "liveSassCompile.settings.formats": [
+
+        {
+            "format": "compressed",
+            "extensionName": ".css",
+            "savePath": null,
+            "savePathReplacementPairs": null
+        }
+    ]
+}

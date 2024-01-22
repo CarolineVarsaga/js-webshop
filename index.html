@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gottfrids Munkfabrik</title>
+    <meta name="description" content="Välj och vraka ur det fantastiska sortimentet av nygräddade munkar! 
+        Här hittar du allt ifrån en klassisk sockermunk till en sliskig vaniljmunk.">
+    <meta name="keywords" content="munk, munkar, sockermunk, vaniljmunk, gottfrids munkfabrik">
+    <meta property="og:title" content="Gottfrids Munkfabrik">
+    <meta property="og:image" content="https://pixabay.com/sv/photos/hunger-hungrig-%C3%A4ter-kaka-kex-413685/">
+    <meta property="og:description" content="Välj och vraka ur det fantastiska sortimentet av nygräddade munkar! 
+      Här hittar du allt ifrån en klassisk sockermunk till en sliskig vaniljmunk.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!--===================   NAVIGATION BAR   ===================-->
+        <nav>
+            <a href="#">
+                <h1>Gottfrids Munkfabrik</h1>
+            </a>
+            <div class="theme-button-container">
+                <button class="theme-button" id="themeButton">
+                    <span class="material-symbols-outlined">
+                        contrast
+                    </span>
+                </button>
+            </div>
+
+            <div class="cart-container">
+                <div class="cart-items-number" id="cartItemsNr"></div>
+                <button class="shopping-cart">
+                    <i class="cart-icon material-icons">shopping_cart</i>
+                </button>
+            </div>
+
+            <div class="menu">
+                <ul class="menu-list">
+                    <li><a class="menu-item" href="#">Hem</a></li>
+                    <li><a class="menu-item" href="#">Kontakt</a></li>
+                    <li><a class="menu-item" href="#cartSection">Varukorg</a></li>
+                </ul>
+            </div>
+
+            <button class="hamburger" aria-label="navigation-menu">
+                <i class="menu-icon material-icons">menu</i>
+                <i class="close-icon material-icons">close</i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!--===================   HOME   ===================-->
+        <section class="page-top">
+            <div class="image-container">
+                <div class="gottfrid-img"></div>
+                <h2 class="heading-welcome">Välkommen</h2>
+            </div>
+            <div class="text-and-donut-container">
+                <p class="text-page-top">
+                    Välj och vraka ur det fantastiska sortimentet av nygräddade munkar!
+                    Här hittar du allt ifrån en klassisk sockermunk till en sliskig vaniljmunk.
+                    Kanske är det barnkalas på g? Här finns även färgsprakande munkar!
+                </p>
+                <div class="donut-box-img"></div>
+            </div>
+        </section>
+        <!--===================   CATEGORY & SORTING   ===================-->
+        <div id="buttonContainer" class="category-section">
+            <button id="allBtn">Välj alla kategorier</button>
+            <button id="chocolateBtn">Choklad</button>
+            <button id="fruitBtn">Frukt/Bär</button>
+            <button id="fillingBtn">Fyllning</button>
+            <button id="naturalBtn">Naturell</button>
+            <button id="sprinklesBtn">Strössel</button>
+        </div>
+
+        <div class="sort-section">
+            <h3>Sortera:</h3>
+            <div id="sortButtons" class="sort-buttons">
+                <button id="ratingBtn">Betyg</button>
+                <button id="categoryBtn">Kategori</button>
+                <button id="nameBtn">Namn</button>
+                <button id="priceBtn">Pris</button>
+            </div>
+        </div>
+        <!--===================   DONUT SHOP   ===================-->
+        <section class="donut-shop">
+            <div class="heading-container">
+                <h2>Munkar</h2>
+            </div>
+            <div id="donutContainer" class="donut-container"></div>
+        </section>
+        <!--===================   SHOPPING CART   ===================-->
+        <section class="cart-section" id="cartSection">
+            <h2>Varukorg</h2>
+            <div class="cart-header">
+                <h3 class="product-heading">Produkt</h3>
+                <h3 class="amount-heading">Antal</h3>
+                <h3 class="price-heading">Pris</h3>
+            </div>
+            <div id="checkOutContainer" class="check-out-container"></div>
+            <div class="discount-container">
+                <div id="printMonday"></div>
+            </div>
+        </section>
+        <!--===================   CUSTOMER INFORMATION FORM   ===================-->
+        <section class="form-section">
+            <form id="form">
+                <h2>Kunduppgifter</h2>
+                <label>
+                    <span class="input-label required">Förnamn</span>
+                    <input class="form-input required-input type-text" id="firstName">
+                    <span class="error-message" id="firstNameError"></span>
+                </label>
+                <label>
+                    <span class="input-label required">Efternamn</span>
+                    <input class="form-input required-input type-text" id="surName">
+                    <span class="error-message" id="surNameError"></span>
+                </label>
+                <label>
+                    <span class="input-label required">Adress (gata)</span>
+                    <input class="form-input required-input type-text" id="address">
+                    <span class="error-message" id="addressError"></span>
+                </label>
+                <label>
+                    <span class="input-label required">Postnummer</span>
+                    <input class="form-input required-input" id="zipCode">
+                    <span class="error-message" id="zipCodeError"></span>
+                </label>
+                <label>
+                    <span class="input-label required">Postort</span>
+                    <input class="form-input required-input type-text" id="city">
+                    <span class="error-message" id="cityError"></span>
+                </label>
+                <label>
+                    <span class="input-label">Ev. portkod</span>
+                    <input class="form-input" type="number">
+                </label>
+                <label>
+                    <span class="input-label required">Telefon (mobil)</span>
+                    <input class="form-input required-input" id="phone">
+                    <span class="error-message" id="phoneError"></span>
+                </label>
+                <label>
+                    <span class="input-label required">Mejl</span>
+                    <input class="form-input required-input" id="email">
+                    <span class="error-message" id="emailError"></span>
+                </label>
+
+                <h3>Betalsätt</h3>
+                <div class="payment-type">
+                    <label class="card-invoice">
+                        <span class="input-label">Faktura</span>
+                        <input class="payment-input" id="paymentInvoiceRadio" type="radio" name="radio">
+                    </label>
+                    <label class="card-invoice">
+                        <span class="input-label">Kort</span>
+                        <input class="payment-input" id="paymentCardRadio" type="radio" name="radio" checked>
+                    </label>
+                </div>
+
+                <div class="payment-invoice invoice-show" id="paymentInvoice">
+                    <label>
+                        <span class="input-label required">Personnummer</span>
+                        <input class="invoice-input form-input" id="socialSecurityNumber" type="tel"
+                            placeholder="ååååmmddxxxx" minlength="10" maxlength="12" name="invoice-input">
+                        <span class="error-message" id="socialSecurityNumberError"></span>
+                    </label>
+                </div>
+
+                <div class="payment-card payment-show" id="paymentCard">
+                    <label>
+                        <span class="input-label">Kortnummer</span>
+                        <input class="card-input form-input" id="cardNumber" type="tel"
+                            placeholder="1234 5678 9012 3456" minlength="16" maxlength="19" name="card-number">
+                    </label>
+                    <div class="date-cvc-container">
+                        <label>
+                            <span class="input-label">Datum</span>
+                            <input class="card-input form-input" id="cardDate" type="tel" placeholder="mmåå"
+                                minlength="4" maxlength="4" name="card-date">
+                        </label>
+                        <label>
+                            <span class="input-label">CVC</span>
+                            <input class="card-input form-input" id="cvc" type="tel" placeholder="3 siffror"
+                                minlength="3" maxlength="3" name="cvc">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="discount-input-container">
+                    <label class="discount">
+                        <span>Rabattkod</span>
+                        <input class="form-input" type="text" placeholder="Har du en rabattkod?">
+                    </label>
+                    <button class="discount-add-button">Lägg till rabattkod</button>
+                </div>
+
+                <div class="checkboxes">
+                    <label class="checkbox-row">
+                        <input type="checkbox" class="checkbox-personal-data checkbox">
+                        <span class="required-checkbox">Jag godkänner behandlingen av mina personuppgifter!<span
+                                class="asterisk">*</span></span>
+                    </label>
+                    <label class="checkbox-row">
+                        <input type="checkbox" class="checkbox-newsletter checkbox" checked>
+                        <span>Nyhetsbrev, ja tack!</span>
+                    </label>
+                </div>
+                <span class="error-text" id="errorText"></span>
+                <button type="submit" class="submit-button" disabled>Beställ</button>
+            </form>
+            <button class="reset-button">Ta bort order</button>
+        </section>
+        <!--===================   CONFIRMATION WINDOW   ===================-->
+        <div class="confirmation-window">
+            <h2 class="confirmation-heading">Tack för din order!</h2>
+            <div class="confirmation-information"></div>
+            <button class="confirmation-button">Stäng</button>
+        </div>
+    </main>
+    <!--===================   FOOTER   ===================-->
+    <footer>
+        <p>Kontakt</p>
+        <p>gottfrids.munkfabrik@mejlamig.se</p>
+        <p>&copy; 2023 Caroline Vårsaga</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
